@@ -4,42 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ad Soyad | Köpek Eğitmeni</title>
-  <meta name="description" content="Yavru köpek eğitimi, temel itaat ve davranış danışmanlığı sunan köpek eğitmeni web sitesi." />
+  <meta name="description" content="Yavru köpek eğitimi, temel itaat ve davranış desteği sunan köpek eğitmeni web sitesi." />
   <style>
-    .whatsapp-float {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 1200;
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 14px 18px;
-      border-radius: 999px;
-      background: #25d366;
-      color: white;
-      font-weight: 800;
-      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.28);
-    }
-
-    .whatsapp-float:hover {
-      filter: brightness(0.96);
-    }
-
     :root {
-      --bg: #f6f4ee;
-      --paper: #ffffff;
-      --paper-soft: #f0ede3;
-      --khaki-1: #d9d3c1;
-      --khaki-2: #b6af93;
-      --khaki-3: #8b8468;
-      --khaki-4: #667153;
-      --khaki-5: #4e5641;
-      --text: #2c2b25;
-      --muted: #6e695c;
-      --line: #e4decd;
-      --shadow: 0 24px 60px rgba(74, 68, 50, 0.10);
-      --radius-xl: 34px;
+      --bg: #f5f4ee;
+      --surface: #ffffff;
+      --surface-soft: #efede3;
+      --khaki-1: #d7d2bf;
+      --khaki-2: #b8b092;
+      --khaki-3: #8c8567;
+      --khaki-4: #667053;
+      --khaki-5: #4c5540;
+      --text: #2d2b25;
+      --muted: #706b5f;
+      --line: #e3decd;
+      --shadow: 0 20px 55px rgba(78, 72, 54, 0.10);
+      --radius-xl: 32px;
       --radius-lg: 24px;
       --radius-md: 18px;
       --max: 1180px;
@@ -52,21 +32,21 @@
       font-family: Inter, Arial, Helvetica, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at top left, rgba(217,211,193,0.35), transparent 22%),
-        radial-gradient(circle at bottom right, rgba(182,175,147,0.18), transparent 20%),
+        radial-gradient(circle at top left, rgba(215, 210, 191, 0.34), transparent 22%),
+        radial-gradient(circle at bottom right, rgba(184, 176, 146, 0.20), transparent 20%),
         var(--bg);
       line-height: 1.65;
     }
 
     a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
+    img { max-width: 100%; display: block; }
 
     .container {
       width: min(calc(100% - 32px), var(--max));
       margin: 0 auto;
     }
 
-    .section { padding: 96px 0; }
+    .section { padding: 88px 0; }
 
     .pill {
       display: inline-flex;
@@ -74,29 +54,29 @@
       gap: 8px;
       padding: 9px 14px;
       border-radius: 999px;
-      background: var(--paper-soft);
+      background: var(--surface-soft);
+      border: 1px solid var(--line);
       color: var(--khaki-5);
       font-size: 0.84rem;
       font-weight: 800;
       letter-spacing: 0.02em;
       margin-bottom: 18px;
-      border: 1px solid var(--line);
     }
 
     h1, h2, h3, p { margin-top: 0; }
 
     h1 {
-      font-size: clamp(2.8rem, 6vw, 5rem);
-      line-height: 1.04;
+      font-size: clamp(2.8rem, 6vw, 4.9rem);
+      line-height: 1.03;
       letter-spacing: -0.05em;
       margin-bottom: 18px;
     }
 
     h2 {
-      font-size: clamp(2rem, 4vw, 3.1rem);
+      font-size: clamp(2rem, 4vw, 3rem);
       line-height: 1.1;
       letter-spacing: -0.04em;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     h3 {
@@ -114,9 +94,9 @@
       position: sticky;
       top: 0;
       z-index: 1000;
-      background: rgba(246, 244, 238, 0.9);
+      background: rgba(245, 244, 238, 0.90);
       backdrop-filter: blur(14px);
-      border-bottom: 1px solid rgba(228, 222, 205, 0.85);
+      border-bottom: 1px solid rgba(227, 222, 205, 0.85);
     }
 
     .nav {
@@ -133,8 +113,8 @@
       align-items: center;
       gap: 12px;
       font-weight: 900;
-      letter-spacing: -0.03em;
       font-size: 1.08rem;
+      letter-spacing: -0.03em;
     }
 
     .brand-mark {
@@ -191,7 +171,7 @@
     .btn-primary {
       background: var(--khaki-4);
       color: white;
-      box-shadow: 0 14px 28px rgba(102, 113, 83, 0.18);
+      box-shadow: 0 14px 28px rgba(102, 112, 83, 0.18);
     }
 
     .btn-primary:hover { background: var(--khaki-5); }
@@ -205,37 +185,35 @@
     .btn-soft:hover { background: #fbfaf7; }
 
     .hero {
-      padding: 34px 0 96px;
+      padding: 34px 0 88px;
     }
 
-    .hero-shell {
+    .hero-layout {
       display: grid;
       gap: 28px;
     }
 
-    .hero-slider {
+    .slider {
       position: relative;
-      min-height: 560px;
-      border-radius: 42px;
+      height: 560px;
+      border-radius: 40px;
       overflow: hidden;
+      border: 1px solid var(--line);
       box-shadow: var(--shadow);
-      border: 1px solid rgba(228, 222, 205, 0.92);
-      background: linear-gradient(135deg, #dbd4c4, #a8a083 60%, #72795f);
+      background: linear-gradient(135deg, #d7d2bf, #a69d80 58%, #6f765d);
     }
 
     .slide {
       position: absolute;
       inset: 0;
       opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.8s ease, transform 0.8s ease;
-      transform: scale(1.03);
+      transition: opacity 0.7s ease;
+      pointer-events: none;
     }
 
     .slide.active {
       opacity: 1;
-      visibility: visible;
-      transform: scale(1);
+      pointer-events: auto;
     }
 
     .slide img {
@@ -245,66 +223,42 @@
       filter: saturate(0.88) contrast(1.02);
     }
 
-    .slide-overlay {
+    .slide::after {
+      content: "";
       position: absolute;
       inset: 0;
-      background:
-        linear-gradient(180deg, rgba(38,42,32,0.18), rgba(38,42,32,0.46)),
-        linear-gradient(90deg, rgba(38,42,32,0.24), rgba(38,42,32,0.08));
-      z-index: 1;
-    }
-
-    .slide-caption {
-      position: absolute;
-      left: 28px;
-      bottom: 28px;
-      z-index: 2;
-      max-width: 330px;
-      background: rgba(255,255,255,0.92);
-      border: 1px solid rgba(228, 222, 205, 0.95);
-      border-radius: 22px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-    }
-
-    .slide-caption strong {
-      display: block;
-      color: var(--khaki-5);
-      margin-bottom: 4px;
+      background: linear-gradient(180deg, rgba(35, 39, 32, 0.14), rgba(35, 39, 32, 0.34));
     }
 
     .slider-arrow {
       position: absolute;
       top: 50%;
       transform: translateY(-50%);
-      z-index: 3;
+      z-index: 4;
       width: 48px;
       height: 48px;
       border-radius: 999px;
       border: 1px solid rgba(255,255,255,0.38);
       background: rgba(255,255,255,0.16);
-      backdrop-filter: blur(8px);
       color: white;
-      cursor: pointer;
       display: grid;
       place-items: center;
-      font-size: 1.2rem;
+      cursor: pointer;
+      backdrop-filter: blur(8px);
+      font-size: 1.25rem;
       transition: 0.2s ease;
     }
 
-    .slider-arrow:hover {
-      background: rgba(255,255,255,0.26);
-    }
-
+    .slider-arrow:hover { background: rgba(255,255,255,0.26); }
     .slider-arrow.prev { left: 18px; }
     .slider-arrow.next { right: 18px; }
 
     .slider-dots {
       position: absolute;
       left: 50%;
-      bottom: 20px;
+      bottom: 18px;
       transform: translateX(-50%);
-      z-index: 3;
+      z-index: 4;
       display: flex;
       gap: 10px;
     }
@@ -313,11 +267,11 @@
       width: 10px;
       height: 10px;
       border-radius: 999px;
-      background: rgba(255,255,255,0.42);
       border: 0;
-      padding: 0;
+      background: rgba(255,255,255,0.42);
       cursor: pointer;
       transition: 0.2s ease;
+      padding: 0;
     }
 
     .slider-dot.active {
@@ -336,18 +290,17 @@
     .hero-actions {
       display: flex;
       justify-content: center;
-      gap: 14px;
       flex-wrap: wrap;
-      margin: 30px 0 22px;
+      gap: 14px;
+      margin: 30px 0 20px;
     }
 
     .hero-note {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      margin-top: 8px;
       padding: 14px 18px;
-      background: var(--paper);
+      background: var(--surface);
       border: 1px solid var(--line);
       border-radius: 999px;
       box-shadow: var(--shadow);
@@ -365,10 +318,10 @@
 
     .about-photo,
     .about-card,
-    .contact-card,
     .service-card,
+    .contact-card,
     .cta-box {
-      background: var(--paper);
+      background: var(--surface);
       border: 1px solid var(--line);
       box-shadow: var(--shadow);
     }
@@ -393,7 +346,7 @@
       right: 24px;
       bottom: 24px;
       padding: 20px;
-      border-radius: 24px;
+      border-radius: 22px;
       background: rgba(255,255,255,0.92);
       border: 1px solid var(--line);
       color: var(--muted);
@@ -416,14 +369,17 @@
 
     .check-item,
     .contact-item {
-      display: grid;
-      grid-template-columns: 46px 1fr;
-      gap: 14px;
-      align-items: start;
       padding: 16px;
       border-radius: 20px;
       background: #fffdf9;
       border: 1px solid var(--line);
+    }
+
+    .check-item {
+      display: grid;
+      grid-template-columns: 46px 1fr;
+      gap: 14px;
+      align-items: start;
     }
 
     .check-icon {
@@ -432,13 +388,9 @@
       border-radius: 14px;
       display: grid;
       place-items: center;
-      background: var(--paper-soft);
+      background: var(--surface-soft);
       color: var(--khaki-5);
       font-size: 1.1rem;
-    }
-
-    .contact-item {
-      grid-template-columns: 1fr;
     }
 
     .contact-item strong {
@@ -459,7 +411,6 @@
     .section-head .lead {
       margin: 0;
       max-width: 500px;
-      text-align: left;
     }
 
     .services-list {
@@ -481,7 +432,7 @@
       height: 110px;
       border-radius: 22px;
       overflow: hidden;
-      background: var(--paper-soft);
+      background: var(--surface-soft);
     }
 
     .service-visual img {
@@ -533,13 +484,31 @@
       border-radius: 16px;
       border: 1px solid var(--line);
       background: white;
-      font: inherit;
       color: var(--text);
+      font: inherit;
     }
 
     textarea {
       min-height: 150px;
       resize: vertical;
+    }
+
+    .contact-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: white;
+      box-shadow: 0 14px 28px rgba(37, 211, 102, 0.22);
+    }
+
+    .btn-instagram {
+      background: white;
+      border-color: var(--line);
     }
 
     .note {
@@ -571,6 +540,24 @@
 
     .socials a:hover { color: var(--text); }
 
+    .whatsapp-float {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 1200;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: #25d366;
+      color: white;
+      font-weight: 800;
+      box-shadow: 0 18px 40px rgba(37, 211, 102, 0.28);
+    }
+
+    .whatsapp-float:hover { filter: brightness(0.96); }
+
     @media (max-width: 980px) {
       .about-wrap,
       .contact-wrap,
@@ -578,7 +565,7 @@
         grid-template-columns: 1fr;
       }
 
-      .hero-slider { min-height: 430px; }
+      .slider { height: 430px; }
 
       .nav-links {
         display: none;
@@ -601,23 +588,18 @@
 
     @media (max-width: 640px) {
       .section { padding: 68px 0; }
-      .hero-actions,
-      .grid-2 { grid-template-columns: 1fr; }
-      .hero-actions { flex-direction: column; }
-      .btn, .service-link { width: 100%; text-align: center; }
-      .hero-slider { min-height: 360px; border-radius: 28px; }
-      .slide-caption {
-        left: 16px;
-        right: 16px;
-        bottom: 52px;
-        max-width: none;
-      }
+      .slider { height: 340px; border-radius: 28px; }
       .slider-arrow { width: 42px; height: 42px; }
       .slider-arrow.prev { left: 10px; }
       .slider-arrow.next { right: 10px; }
+      .hero-actions,
+      .contact-buttons { flex-direction: column; }
+      .grid-2 { grid-template-columns: 1fr; }
+      .btn, .service-link, .contact-buttons .btn { width: 100%; text-align: center; }
       .about-card,
       .contact-card,
       .cta-box { padding: 24px; }
+      .whatsapp-float { right: 14px; bottom: 14px; }
     }
   </style>
 </head>
@@ -642,19 +624,14 @@
 
   <main>
     <section class="hero" id="home">
-      <div class="container hero-shell">
-        <div class="hero-slider" id="heroSlider">
+      <div class="container hero-layout">
+        <div class="slider" id="heroSlider">
           <div class="slide active">
             <img src="images/hero-2.jpg" alt="Parkta köpek eğitimi sırasında yürüyüş çalışması" />
-            <div class="slide-overlay"></div>
-         ay"></div>
-            
           </div>
 
           <div class="slide">
             <img src="images/hero-3.jpg" alt="Köpek sahibiyle eğitim sırasında iletişim anı" />
-            <div class="slide-overlay"></div>
-            
           </div>
 
           <button class="slider-arrow prev" id="prevSlide" aria-label="Önceki fotoğraf">‹</button>
@@ -675,8 +652,8 @@
           </p>
 
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#contact">İletişime Geç</a>
-            <a class="btn btn-soft" href="#services">Hizmetleri İncele</a>
+            <a class="btn btn-primary" href="https://wa.me/905551112233" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-soft" href="https://instagram.com/kullaniciadin" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
 
           <div class="hero-note">
@@ -690,7 +667,7 @@
       <div class="container about-wrap">
         <div class="about-photo">
           <img src="images/about.jpg" alt="Köpek eğitmeni ve köpekle doğal bir çalışma anı" />
-          <div class="about-photo-note">Açık havada, köpekle çalışma anını gösteren doğal bir fotoğraf burada çok iyi durur.</div>
+          <div class="about-photo-note">Doğal, sıcak ve güven veren bir açık hava fotoğrafı burada en iyi sonucu verir.</div>
         </div>
 
         <div class="about-card">
@@ -739,7 +716,7 @@
             <span class="pill">🦴 Services / Hizmetler</span>
             <h2>İhtiyacınıza göre şekillenen destek alanları</h2>
           </div>
-          <p class="lead">Bu akış alt alta geniş servis kartlarıyla daha sakin ve daha premium bir görünüm verir.</p>
+          <p class="lead">Bu akış alt alta geniş servis kartlarıyla daha sakin ve daha düzenli bir görünüm verir.</p>
         </div>
 
         <div class="services-list">
@@ -780,7 +757,7 @@
         <div class="cta-box">
           <h3 style="font-size:1.45rem; margin-bottom:10px;">Nereden başlayacağını bilmiyorsan sorun değil.</h3>
           <p>Kısa bir ön görüşmede yaşadığın temel durumu konuşabilir, köpeğin için en uygun başlangıç planını birlikte belirleyebiliriz.</p>
-          <a class="btn btn-soft" href="#contact" style="margin-top:8px; background:white;">Mesaj Gönder</a>
+          <a class="btn btn-soft" href="https://wa.me/905551112233" target="_blank" rel="noopener noreferrer" style="margin-top:8px; background:white;">WhatsApp'tan Yaz</a>
         </div>
       </div>
     </section>
@@ -790,30 +767,29 @@
         <div class="contact-card">
           <span class="pill">📞 Contact / İletişim</span>
           <h2>Beraber nereden başlayacağımıza birlikte karar verelim.</h2>
-          <p class="lead" style="max-width:100%; text-align:left; margin:0;">
-            Aşağıdaki bilgileri kendi numaran, e-posta adresin ve Instagram hesabınla değiştirebilirsin.
-            İstersen bu alanı sadece WhatsApp butonlu daha sade bir yapıya da çevirebilirim.
+          <p class="lead" style="max-width:100%; margin:0;">
+            Aşağıdaki bağlantıları kendi numaran ve Instagram hesabınla değiştirebilirsin.
+            Şimdilik düzenlenebilir yer tutucu olarak bırakıldı.
           </p>
 
           <div class="contact-stack">
             <div class="contact-item">
-              <div>
-                <strong>Telefon</strong>
-                <a href="tel:+905551112233">+90 555 111 22 33</a>
-              </div>
+              <strong>Telefon</strong>
+              <a href="tel:+905551112233">+90 555 111 22 33</a>
             </div>
             <div class="contact-item">
-              <div>
-                <strong>WhatsApp</strong>
-                <a href="https://wa.me/905551112233" target="_blank" rel="noopener noreferrer">WhatsApp'tan yaz</a>
-              </div>
+              <strong>WhatsApp</strong>
+              <a href="https://wa.me/905551112233" target="_blank" rel="noopener noreferrer">https://wa.me/905551112233</a>
             </div>
             <div class="contact-item">
-              <div>
-                <strong>Instagram</strong>
-                <a href="https://instagram.com/kullaniciadin" target="_blank" rel="noopener noreferrer">@kullaniciadin</a>
-              </div>
+              <strong>Instagram</strong>
+              <a href="https://instagram.com/kullaniciadin" target="_blank" rel="noopener noreferrer">@kullaniciadin</a>
             </div>
+          </div>
+
+          <div class="contact-buttons">
+            <a class="btn btn-whatsapp" href="https://wa.me/905551112233" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a class="btn btn-instagram" href="https://instagram.com/kullaniciadin" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
 
@@ -885,54 +861,48 @@
 
     const slides = Array.from(document.querySelectorAll('.slide'));
     const dots = Array.from(document.querySelectorAll('.slider-dot'));
-    const prevSlideButton = document.getElementById('prevSlide');
-    const nextSlideButton = document.getElementById('nextSlide');
+    const prevButton = document.getElementById('prevSlide');
+    const nextButton = document.getElementById('nextSlide');
     let currentSlide = 0;
-    let autoSlide;
+    let autoPlay;
 
     function showSlide(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-      });
-      dots.forEach((dot, i) => {
-        dot.classList.toggle('active', i === index);
-      });
+      slides.forEach((slide, i) => slide.classList.toggle('active', i === index));
+      dots.forEach((dot, i) => dot.classList.toggle('active', i === index));
       currentSlide = index;
     }
 
     function nextSlide() {
-      const newIndex = (currentSlide + 1) % slides.length;
-      showSlide(newIndex);
+      showSlide((currentSlide + 1) % slides.length);
     }
 
     function prevSlide() {
-      const newIndex = (currentSlide - 1 + slides.length) % slides.length;
-      showSlide(newIndex);
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
     }
 
-    function startAutoSlide() {
-      clearInterval(autoSlide);
-      autoSlide = setInterval(nextSlide, 4500);
+    function restartAutoPlay() {
+      clearInterval(autoPlay);
+      autoPlay = setInterval(nextSlide, 4500);
     }
 
-    nextSlideButton.addEventListener('click', () => {
+    nextButton.addEventListener('click', () => {
       nextSlide();
-      startAutoSlide();
+      restartAutoPlay();
     });
 
-    prevSlideButton.addEventListener('click', () => {
+    prevButton.addEventListener('click', () => {
       prevSlide();
-      startAutoSlide();
+      restartAutoPlay();
     });
 
     dots.forEach((dot, index) => {
       dot.addEventListener('click', () => {
         showSlide(index);
-        startAutoSlide();
+        restartAutoPlay();
       });
     });
 
-    startAutoSlide();
+    restartAutoPlay();
   </script>
 </body>
 </html>
